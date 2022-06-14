@@ -1,0 +1,32 @@
+﻿@model Lab05.Models.KhachHang
+
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DangNhap</h2>
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <h1>Đăng nhập</h1>
+        <div class="form-group">
+            <label for="userName" class="col-sm-2 col-form-label">Tên tài khoản</label>
+            <div class="col-sm-10">
+                @Html.EditorFor(model => model.tendangnhap, new { htmlAttributes = new { @class = "form-control" } })
+                <!-- <input type="text" class="form-control" id="userName"> -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Mật khẩu</label>
+            <div class="col-sm-10">
+                @Html.EditorFor(model => model.matkhau, new { htmlAttributes = new { @class = "form-control" } })
+                <!-- <input type="password" class="form-control" id="inputPassword"> -->
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="Đăng nhập" />
+        </div>
+    </div>
+}
+
